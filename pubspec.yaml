@@ -1,0 +1,294 @@
+name: coupled
+description: Coupled The Datemony App
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.33+33
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_native_splash :
+  ntp: 
+  fluttertoast:
+  shared_preferences:
+  http:
+  share_plus:
+  # Used for BLoC state management
+  flutter_bloc:
+  equatable:
+  rxdart: 
+  # User for Firebase Notifications
+  firebase_messaging: 
+  flutter_local_notifications:
+  dots_indicator:
+  laravel_echo2:
+  google_sign_in:
+  flutter_login_facebook:
+  
+  timeago:
+  intl:
+  date_format:
+  emoji_picker_flutter:
+  flutter_datetime_picker:
+  flutter_google_places: ^0.3.0
+  image_picker: 
+  flutter_cache_manager:
+  photo_view:
+  reorderable_grid :
+  image_cropper:
+  circle_list:
+  url_launcher: 
+  flutter_html:
+  bubble_tab_indicator:
+  razorpay_flutter:
+  json_annotation:
+  shimmer:
+  
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+  build_runner:
+  json_serializable:
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/intro_cake.jpg
+    - assets/intro_car.jpg
+    - assets/intro_girl.jpg
+    - assets/intro_flower.jpg
+    - assets/intro_love.jpg
+    - assets/intro_chocolate.jpg
+    - assets/no_image.jpg
+    - assets/reg_back_img.png
+    - assets/welcome_back_img.jpg
+    - assets/facebook_icon.png
+    - assets/instagram.png
+    - assets/twitter.png
+    - assets/linkedin_icon.png
+    - assets/google_plus.png
+    - assets/athletic.png
+    - assets/unAthletic.png
+    - assets/regular.png
+    - assets/unRegular.png
+    - assets/slim.png
+    - assets/unSlim.png
+    - assets/Love-Banner.png
+    - assets/users.png
+    - assets/quotesIcon/users.png
+    - assets/quotesIcon/camera.png
+    - assets/quotesIcon/filter.png
+    - assets/quotesIcon/gift.png
+    - assets/quotesIcon/love.png
+    - assets/quotesIcon/plan.png
+    - assets/Religion/Buddhism.png
+    - assets/Religion/Christianity.png
+    - assets/Religion/Hinduism.png
+    - assets/Religion/Islam.png
+    - assets/Religion/Jainism.png
+    - assets/Religion/Judaism.png
+    - assets/Religion/Others.png
+    - assets/Religion/Sikhism.png
+    - assets/ticker.png
+    - assets/add_image.png
+    - assets/more.png
+    - assets/heart.svg
+    - assets/heart.png
+    - assets/drawerMenu/checklist.svg
+    - assets/drawerMenu/disc.svg
+    - assets/drawerMenu/document_new.svg
+    - assets/drawerMenu/gear.svg
+    - assets/drawerMenu/meter.svg
+    - assets/drawerMenu/return.svg
+    - assets/logo/logo_blue.png
+    - assets/logo/logo_pink.png
+    - assets/logo/mini_logo_blue.png
+    - assets/logo/mini_logo_pink.png
+    - assets/ic_female.png
+    - assets/ic_male.png
+    - assets/ic_matchmaker.png
+    - assets/user_shape.png
+    - assets/ic_hamburger_menu.png
+    - assets/gallery.png
+    - assets/facebook.png
+    - assets/ic_camera.png
+    - assets/tolBg.png
+    - assets/Info.png
+    - assets/loading.gif
+    - assets/MatchMaker/ic_generalMatches.png
+    - assets/MatchMaker/ic_mixMatches.png
+    - assets/MatchMaker/ic_couplingMatches.png
+    - assets/MatchMaker/restore.png
+    - assets/square-edit-outline.png
+    - assets/PlansAndPayment/Free-Plan.png
+    - assets/PlansAndPayment/Silver.png
+    - assets/PlansAndPayment/Platinum.png
+    - assets/PlansAndPayment/Gold.png
+    - assets/PlansAndPayment/Diamond.png
+    - assets/PlansAndPayment/information-variant.png
+    - assets/Profile/Report.png
+    - assets/Profile/Block.png
+    - assets/Profile/Badge.png
+    - assets/Profile/Verifid.png
+    - assets/Profile/Verifid2.png
+    - assets/Profile/Edit-.png
+    - assets/Profile/Share.png
+    - assets/Profile/My-Personal-Fact-Sheet.png
+    - assets/Profile/Cancel.png
+    - assets/Profile/Chat.png
+    - assets/Profile/Membership.png
+    - assets/Profile/information-variant.png
+    - assets/Profile/Connect.png
+    - assets/Profile/ShortlistedWhite.png
+    - assets/Profile/Shortlist.png
+    - assets/Profile/Call.png
+    - assets/Profile/CallWhite.png
+    - assets/Profile/Age.png
+    - assets/Profile/height.png
+    - assets/Profile/Kg.png
+    - assets/Profile/Slim.png
+    - assets/Profile/Wheatish.png
+    - assets/Profile/Coupling-Score-1.png
+    - assets/Profile/Coupling-Score-2.png
+    - assets/Profile/Coupling-Score-3.png
+    - assets/Profile/Coupling-Score-4.png
+    - assets/Profile/Coupling-Score-5.png
+    - assets/Profile/Specially-Abled.png
+    - assets/Profile/Recommendations.png
+    - assets/Profile/My-Religion-&-Cast.png
+    - assets/Profile/My-Marital-Status.png
+    - assets/Profile/Coupling-Score.png
+    - assets/Profile/My-Kundali.png
+    - assets/Profile/My-Job-&-Education.png
+    - assets/Profile/My-Location.png
+    - assets/Profile/Buzz-About-My-Perfect-Partner.png
+    - assets/Profile/Meet-My-Family.png
+    - assets/Profile/Gossip-About-Myself.png
+    - assets/Profile/Connected.png
+    - assets/MatchMeter/
+    - assets/MatchMeter/Add.png
+    - assets/MatchMeter/Chat.png
+    - assets/MatchMeter/Connect.png
+    - assets/MatchMeter/Delete.png
+    - assets/MatchMeter/More.png
+    - assets/MatchMeter/More-Content.png
+    - assets/MatchMeter/Reaccept.png
+    - assets/MatchMeter/Received.png
+    - assets/MatchMeter/Rejected.png
+    - assets/MatchMeter/Reminder.png
+    - assets/MatchMeter/Sent.png
+    - assets/MatchMeter/Shortlisted.png
+    - assets/MatchMeter/Snooze.png
+    - assets/MatchMeter/Token-Of-Love.png
+    - assets/MatchMeter/Unblock.png
+    - assets/MatchMeter/Views.png
+    - assets/MatchBoard/Coupling-Matches.png
+    - assets/MatchBoard/General-Matches.png
+    - assets/MatchBoard/Latest-Profile.png
+    - assets/MatchBoard/Mix-Matches.png
+    - assets/MatchBoard/Match-Maker.png
+    - assets/MatchBoard/Family.png
+    - assets/MatchBoard/Personal.png
+    - assets/MatchBoard/Profession-_.png
+    - assets/MatchBoard/Recommendation.png
+    - assets/MatchBoard/Silver-Card-Bg.png
+    - assets/MatchBoard/Next.png
+    - assets/MatchBoard/Notification.png
+    - assets/MatchBoard/Religion.png
+    - assets/MatchBoard/Photograph.png
+    - assets/MatchBoard/Search.png
+    - assets/MatchBoard/Close.png
+    - assets/MatchBoard/Advanced-Search.png
+    - assets/MatchBoard/Emoji.png
+    - assets/MatchBoard/Conversations.png
+    - assets/MatchBoard/Conversation_fIlled.png
+    - assets/MatchBoard/MatchBoardFilled.png
+    - assets/MatchBoard/MatchBoard.png
+    - assets/MatchBoard/MatchOMeter.png
+    - assets/MatchBoard/MOMFilled.png
+    - assets/MatchBoard/searchingMatch.png
+    - assets/Chat/Events.png
+    - assets/Chat/Message-Sent.png
+    - assets/TOL/Choose-Pay-Send.png
+    - assets/TOL/Earn-Three-Hearts.png
+    - assets/TOL/Make-Lasting-Impression.png
+    - assets/TOL/Purchase-Icon.png
+    - assets/TOL/Start-Chating.png
+    - assets/TOL/Unlock-Token-of-Love.png
+    - assets/TOL/Globe.png
+    - assets/TOL/package_variant.png
+    - assets/google.png
+    - assets/TOL/Requst.png
+    - assets/tol_new.png
+    - assets/logo/logo_pink.png
+    - assets/MatchBoard/Conversation_fIlled.png
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Bariol
+      fonts:
+        - asset: fonts/Bariol_Regular.otf
+        - asset: fonts/Bariol_Regular_Italic.otf
+          style: italic
+        - asset: fonts/Bariol_Bold.otf
+          weight: 700
+
+    - family: DripIcon
+      fonts:
+        - asset: fonts/Dripicons_v2.ttf
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
