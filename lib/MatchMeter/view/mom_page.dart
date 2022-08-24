@@ -114,7 +114,7 @@ class MoMPageState extends State<MoMPage> with TickerProviderStateMixin {
     _viewMoreTabController = TabController(length: 2, vsync: this);
     _blockedTabController = TabController(length: 2, vsync: this);
 
-     loadMomData(index0, index1) {
+    loadMomData(index0, index1) {
       pageNumber = 1;
       // test.clear();
       print('loadtest....');
@@ -128,58 +128,57 @@ class MoMPageState extends State<MoMPage> with TickerProviderStateMixin {
     ///main tab controller
     _mainTabController!.addListener(() {
       //....
-     
-      _acceptedTabController!.animateTo(0);
-      //....
-      _shortlistTabController!.animateTo(0);
-      //....
-      _rejectTabController!.animateTo(0);
-      //....
-      _viewMoreTabController!.animateTo(0);
-      //...
-      _blockedTabController!.animateTo(0);
-    });
-    _mainTabController!.addListener(() {
-      if (_mainTabController!.indexIsChanging==true) {
+      if (_mainTabController!.indexIsChanging == true) {
         loadMomData(0, _mainTabController?.index);
       }
-      _acceptedTabController!.addListener(() {
-        if (_acceptedTabController!.index == 0) {
-          loadMomData(1, 0);
-        } else if (_acceptedTabController!.index == 1) {
-          loadMomData(1, 1);
-        }
-      });
-      _shortlistTabController!.addListener(() {
-        if (_shortlistTabController!.index == 0) {
-          loadMomData(2, 0);
-        } else if (_shortlistTabController!.index == 1) {
-          loadMomData(2, 1);
-        }
-      });
-      _rejectTabController!.addListener(() {
-        if (_rejectTabController!.index == 0) {
-          loadMomData(3, 0);
-        } else if (_rejectTabController!.index == 1) {
-          loadMomData(3, 1);
-        }
-      });
-      _viewMoreTabController!.addListener(() {
-        if (_viewMoreTabController!.index == 0) {
-          //_viewMoreTabController!.animateTo(0);
-          loadMomData(4, 0);
-        } else if (_viewMoreTabController!.index == 1) {
-          //_viewMoreTabController!.animateTo(1);
-          loadMomData(4, 1);
-        }
-      });
-      _blockedTabController!.addListener(() {
-        if (_blockedTabController!.index == 0) {
-          loadMomData(5, 0);
-        } else if (_blockedTabController!.index == 1) {
-          loadMomData(5, 1);
-        }
-      });
+
+      // _acceptedTabController!.animateTo(0);
+      // //....
+      // _shortlistTabController!.animateTo(0);
+      // //....
+      // _rejectTabController!.animateTo(0);
+      // //....
+      // _viewMoreTabController!.animateTo(0);
+      // //...
+      // _blockedTabController!.animateTo(0);
+    });
+
+    _acceptedTabController!.addListener(() {
+      if (_acceptedTabController!.index == 0) {
+        loadMomData(1, _acceptedTabController!.index);
+      } else if (_acceptedTabController!.index == 1) {
+        loadMomData(1, _acceptedTabController!.index);
+      }
+    });
+    _shortlistTabController!.addListener(() {
+      if (_shortlistTabController!.index == 0) {
+        loadMomData(2, _shortlistTabController!.index);
+      } else if (_shortlistTabController!.index == 1) {
+        loadMomData(2, _shortlistTabController!.index);
+      }
+    });
+    _rejectTabController!.addListener(() {
+      if (_rejectTabController!.index == 0) {
+        loadMomData(3, _rejectTabController!.index);
+      } else if (_rejectTabController!.index == 1) {
+        loadMomData(3, _rejectTabController!.index);
+      }
+    });
+    _viewMoreTabController!.addListener(() {
+      if (_viewMoreTabController!.index == 0) {
+        //_viewMoreTabController!.animateTo(0);
+        loadMomData(4, _viewMoreTabController!.index);
+      } else if (_viewMoreTabController!.index == 1) {
+        //_viewMoreTabController!.animateTo(1);
+        loadMomData(4, _viewMoreTabController!.index);
+      }
+    });
+    _blockedTabController!.addListener(() {
+      if (_blockedTabController!.index == 0) {
+        loadMomData(5, _blockedTabController!.index);
+      } else if (_blockedTabController!.index == 1) {
+        loadMomData(5, _blockedTabController!.index);
+      }
     });
 
     super.didChangeDependencies();

@@ -70,13 +70,20 @@ class _PageWithTabsState extends State<PageWithTabs>
     });
   }
 
- @override
+  // @override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   widget.tabData?.clear();
+  //   widget.tabName?.clear();
+  //   super.dispose();
+  // }
+  @override
   void dispose() {
     // TODO: implement dispose
-    widget.tabData?.clear();
-    widget.tabName?.clear();
+    widget.tabController?.indexIsChanging;
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     print('widget?.ta---------bData');

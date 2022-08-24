@@ -1233,9 +1233,10 @@ class HeartPercentage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        print("premiumuserid====$profileImg");
         if (GlobalData.myProfile.membership?.paidMember == true &&
             userId != null) {
-          print("premiumuserid====");
+          print("premiumuserid====$profileImg");
           print(userId);
           Navigator.push(
             context,
@@ -1250,7 +1251,7 @@ class HeartPercentage extends StatelessWidget {
           );
         } else if (GlobalData.myProfile.membership?.paidMember == false &&
             GlobalData.myProfile.currentCsStatistics?.status == "active") {
-          print("freeuserid====");
+          print("freeuserid====$profileImg");
           print(userId);
           print(GlobalData.myProfile.currentCsStatistics?.status.toString());
           //becomeamemberPlan(context);

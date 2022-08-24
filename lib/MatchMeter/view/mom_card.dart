@@ -1062,7 +1062,7 @@ class _MomCardState extends State<MomCard> {
 
       if (widget.partner == true) {
         setState(() {
-        final PartnerDetails? partner = widget.data?.partner;
+          PartnerDetails? partner = widget.data?.partner;
 
           ///coupling score
           couplingScore = momDatum?.partner?.score ?? 0;
@@ -1091,7 +1091,7 @@ class _MomCardState extends State<MomCard> {
         });
       } else if ((widget.partner == false)) {
         setState(() {
-        final  PartnerDetails? user = widget.data?.user;
+          PartnerDetails? user = widget.data?.user;
 
           ///coupling score
           couplingScore = momDatum?.user?.score ?? 0;
@@ -1134,20 +1134,22 @@ class _MomCardState extends State<MomCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          '/profileSwitch',
-          arguments: ProfileSwitch(
+        userShortInfoModel?.response?.data?.length != null
+            ? Navigator.pushNamed(
+                context,
+                '/profileSwitch',
+                arguments: ProfileSwitch(
 //              memberShipCode: membershipCode,
-            index: widget.index!,
-            userShortInfoModel: userShortInfoModel!,
-            memberShipCode: widget.partner!
-                ? widget.matchMeterModel.response?.data![widget.index!].partner
-                    ?.membershipCode
-                : widget.matchMeterModel.response?.data![widget.index!].user
-                    ?.membershipCode,
-          ),
-        );
+                  index: widget.index!,
+                  userShortInfoModel: userShortInfoModel!,
+                  memberShipCode: widget.partner!
+                      ? widget.matchMeterModel.response?.data![widget.index!]
+                          .partner?.membershipCode
+                      : widget.matchMeterModel.response?.data![widget.index!]
+                          .user?.membershipCode,
+                ),
+              )
+            : SizedBox();
       },
       child: Container(
         color: cardColor,

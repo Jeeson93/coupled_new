@@ -66,25 +66,15 @@ class MomBloc extends Bloc<MomEvent, MomState> {
       emit(InitialMomState());
       try {
         GlobalData.matchmeter = await Repository()
-            .getMatchOMeterList(path: event.param, perPageCount: 10, page: 1);
-        MatchOMeterModel matchOMeterModel = GlobalData.matchmeter;
-        print('matchOMeterModel--------');
-        print(matchOMeterModel.response?.data![0]);
-
-        emit(LoadedMomData(matchOMeterModel));
+            .getMatchOMeterList(path: event.param, perPageCount: 50, page: 1);
+        print('responsed....................');
+        emit(LoadedMomData(GlobalData.matchmeter));
       } catch (e) {
         // var error = json.decode(e.toString());
         // var a = CommonResponseModel.fromJson(error);
         // print('a.response.msg----------------------');
         // print(a.response.msg);
-        MatchOMeterModel matchOMeterModel = MatchOMeterModel();
-        matchOMeterModel.response?.data?.clear();
-        print('errorrrrrrr..........${e}');
-        matchOMeterModel = MatchOMeterModel.fromJson({
-          "status": "error",
-          "response": {"msg": "No data found"},
-          "code": 404
-        });
+
         emit(MoMErrorState(e.toString()));
 
         //print('fgfgggfgf$a');

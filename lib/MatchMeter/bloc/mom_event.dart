@@ -2,7 +2,7 @@ part of 'mom_bloc.dart';
 
 @immutable
 abstract class MomEvent extends Equatable {
-  const MomEvent([List props = const []]) : super();
+  const MomEvent([List? props]) : super();
 }
 
 class LoadMomData extends MomEvent {

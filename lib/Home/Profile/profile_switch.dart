@@ -11,8 +11,7 @@ import 'package:flutter/material.dart';
 
 class ProfileSwitch extends StatefulWidget {
   final String? memberShipCode;
-  UserShortInfoModel userShortInfoModel =
-      UserShortInfoModel(response: UserShortInfoResponse.fromJson({}));
+  UserShortInfoModel userShortInfoModel = UserShortInfoModel();
   final int index;
 
   ProfileSwitch({
@@ -51,55 +50,7 @@ class _ProfileSwitchState extends State<ProfileSwitch> {
                 OthersProfile(
                   offset: pageOffset,
                   membershipCode: element.membershipCode,
-                  profileResponse: ProfileResponse(
-                      name: element.name,
-                      lastName: element.lastName,
-                      membershipCode: element.membershipCode,
-                      info: element.info,
-                      officialDocuments: element.officialDocuments != null
-                          ? element.officialDocuments
-                          : null,
-                      // dp: element.dp,
-                      photos: [element.dp!],
-                      usersBasicDetails: UsersBasicDetails(),
-                      mom: Mom(),
-                      preference:
-                          Preference(complexion: BaseSettings(options: [])),
-                      address: Address(),
-                      photoData: [],
-                      family: Family(
-                          fatherOccupationStatus: BaseSettings(options: []),
-                          cast: BaseSettings(options: []),
-                          familyType: BaseSettings(options: []),
-                          familyValues: BaseSettings(options: []),
-                          gothram: BaseSettings(options: []),
-                          motherOccupationStatus: BaseSettings(options: []),
-                          religion: BaseSettings(options: []),
-                          subcast: BaseSettings(options: [])),
-                      educationJob: EducationJob(
-                          educationBranch: BaseSettings(options: []),
-                          experience: BaseSettings(options: []),
-                          highestEducation: BaseSettings(options: []),
-                          incomeRange: BaseSettings(options: []),
-                          industry: BaseSettings(options: []),
-                          profession: BaseSettings(options: [])),
-                      membership: Membership.fromMap({}),
-                      userCoupling: [],
-                      dp: Dp(
-                          photoName: '',
-                          imageType: BaseSettings(options: []),
-                          imageTaken: BaseSettings(options: []),
-                          userDetail: UserDetail(
-                              membership: Membership(paidMember: false))),
-                      blockMe: Mom(),
-                      reportMe: Mom(),
-                      freeCoupling: [],
-                      recomendCause: [],
-                      shortlistByMe: Mom(),
-                      shortlistMe: Mom(),
-                      photoModel: PhotoModel(),
-                      currentCsStatistics: CurrentCsStatistics(),
-                      siblings: []),
+                  profileResponse: ProfileResponse(),
                 ),
               );
             },
@@ -109,6 +60,7 @@ class _ProfileSwitchState extends State<ProfileSwitch> {
 
   @override
   void didChangeDependencies() {
+    print(profileSwitch.userShortInfoModel.response?.data);
     profileSwitch =
         ModalRoute.of(context)!.settings.arguments as ProfileSwitch ??
             ProfileSwitch(

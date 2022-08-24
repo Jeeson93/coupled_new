@@ -126,7 +126,7 @@ class GlobalData {
 
   ///specially abled
   static MatchOMeterModel speciallyAbled = MatchOMeterModel();
-  static MatchOMeterModel matchmeter = MatchOMeterModel();
+  static MatchOMeterModel? matchmeter;
 
   ///coupling score
   static CouplingScoreModel couplingScoreModel = CouplingScoreModel(

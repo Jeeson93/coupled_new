@@ -11,12 +11,12 @@ class InitialMomState extends MomState {
 }
 
 class LoadedMomData extends MomState {
-  final MatchOMeterModel matchOMeterModel;
+  final MatchOMeterModel? matchOMeterModel;
 
   LoadedMomData(this.matchOMeterModel) : super(matchOMeterModel);
 
   @override
-  List<Object> get props => [this.matchOMeterModel];
+  List<Object?> get props => [this.matchOMeterModel];
 }
 
 class LoadedSpecially extends MomState {

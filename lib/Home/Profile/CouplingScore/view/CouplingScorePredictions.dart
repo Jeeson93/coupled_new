@@ -131,6 +131,7 @@ class _CoupingScorePredictions extends State<CoupingScorePredictions>
         state = false;
       }
     });
+    print(myProfileResponse.dp!.photoName);
   }
 
   List<Widget> generateCard(List<Ical>? physical) {
@@ -230,9 +231,10 @@ class _CoupingScorePredictions extends State<CoupingScorePredictions>
                                       width: 110,
                                       fit: BoxFit.cover,
                                       placeholder: 'assets/no_image.jpg',
-                                      image: APis().imageApi(widget.profileImg,
-                                          imageConversion:
-                                              ImageConversion.MEDIA),
+                                      image: widget.profileImg,
+                                      // APis().imageApi(widget.profileImg,
+                                      //     imageConversion:
+                                      //         ImageConversion.MEDIA),
                                     ),
                                   ),
                                 ),
